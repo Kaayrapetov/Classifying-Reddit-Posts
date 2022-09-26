@@ -11,7 +11,7 @@ We can use the model to make sure that the text of the advertisement would be cl
 
 ### Data
 
-The data for this study was obtained from Reddit using the [Pushshift API](https://github.com/pushshift/api). The API was used to scrape the contents of posts on two subreddits: [r/ElementaryTeachers](https://www.reddit.com/r/ElementaryTeachers/) and [r/HighSchoolTeachers](https://www.reddit.com/r/HighSchoolTeachers/). These two subreddits were chosen since they are quite distinct in many ways, but also have in common the over-arching theme of education. This allowed me to use the data either as is, giving the models very distinct key-words that can be used to distingush between the two groups, or, with subreddit-specific keywords removed, making the two groups more similar. 
+The data for this study was obtained from Reddit using the [Pushshift API](https://github.com/pushshift/api). The API was used to scrape the contents of posts on two subreddits: [r/ElementaryTeachers](https://www.reddit.com/r/ElementaryTeachers/) and [r/HighSchoolTeachers](https://www.reddit.com/r/HighSchoolTeachers/). These two subreddits were chosen since they are quite distinct in many ways, but also have in common the over-arching theme of education. This allowed me to use the data either as is, giving the models very distinct key-words that can be used to distingush between the two groups, or, with subreddit-specific keywords removed, making the two groups more similar. There were a total of about 24,000 subreddits scraped. Of those, about 15,500 subreddits were from High School teachers and about 8,500 subreddits were from Elementary School Teachers. 
 
 ### Models
 
@@ -65,7 +65,7 @@ SVM-CVec|0.92|0.95|0.93
 
 #### Conclusion and Future Directions
 
-Overall Support Vector Machine and Multinomial Naive Bayes Classifiers did the best with both datasets. However Multinomial Naive Bayes had a shorter runtime and a more balanced number of false classifications between the two classes.  
+Overall Support Vector Machine and Multinomial Naive Bayes Classifiers did the best. However Multinomial Naive Bayes had a shorter runtime and a more balanced number of false classifications between the two classes.  
 
 
  
