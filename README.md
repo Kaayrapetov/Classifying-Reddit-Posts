@@ -44,54 +44,28 @@ I used a pipeline and gridsearching to find the best parameters optimized for re
 3. Support Vector Machine with Count Vectorizer
 4. Support Vector Machine with TF-IDF Vectorizer
 5. Multinomial Naive Bayes Classifier with Count Vectorizer
-6. Voting Classifier with Count Vectorizer
-
-#### Testing Best Estimators
-Once the best estimator and transformer combination with optimized hyperparameters were determined, I tested them on data that was less distinct than the original full dataset. In order to create more overlap between the two classes of posts, I found the top 50 most frequently used words in both groups, and then determined what terms were present in the top 50 for each group that were missing from the other group. I then added these two sets of unique words totalling 42 words (21 from each group) to english stopwords. This new set of stop words were removed form the posts by the vectorizer. The dataset with no key words removed will be referred to as the _full dataset_, whereas the dataset with unique key words removed will be referred to as the _modified dataset_.
-
-
 
 
 ------------------------------
 #### Results
 
 **Model performance when trained on full dataset**
-All models tested did really well in classifying posts into the corerct subreddit. SVM-Tvec (Support Vector Machine with Tfidf Vectorizer) did the best followed by Multinomial Naive Bayes, as shown in the table below. From these, I selected SVM_TVec, MNBayes, LogReg_TVec and VotingC to be tested for performance on classifying the modified dataset. 
+All models tested did really well in classifying posts into the corerct subreddit. SVM-Tvec (Support Vector Machine with Tfidf Vectorizer) did the best followed by Multinomial Naive Bayes, as shown in the table below. From these, I selected SVM_TVec, MNBayes and  LogReg_TVec to be tested for performance on classifying the modified dataset. 
 
 Model|Accuracy|Recall|Precision
 -----|--------|------|---------
 SVM-TVec|0.988874|0.990450|0.987084
 MNBayes|0.988537|0.987722|0.989071
-VotingC|0.988537|0.993179|0.983784
-LogReg-TVec|0.988200|0.991132|0.985085
-LogReg-CVec|0.986514|0.986357|0.986357
-SVM-CVec|0.982131|0.984993|0.978983
+LogReg-TVec|0.93|0.96|0.94
+LogReg-CVec|0.94|0.95|0.95
+SVM-CVec|0.92|0.95|0.93
 
 
-**Model performance when trained on the modified dataset**
-
-SVM and MNBayes did the best when trained on the modified dataset with unique key words removed. The performance of LogReg and VotingC dropped when these identifying key words were missing. 
-
-Model|Accuracy|Recall|Precision
------|--------|------|----------
-SVM|0.989211|0.993179|0.985115
-MNBayes|0.988537|0.988404|0.988404
-LogReg|0.980108|0.982947|0.976949
-VotingC|0.977073|0.972715|0.980743
-
-Confusion matrices for the models trained on the modified dataset.
-
-<img src="figures/final_models.png" style="width: 1000px;" >
 
 
 #### Conclusion and Future Directions
 
 Overall Support Vector Machine and Multinomial Naive Bayes Classifiers did the best with both datasets. However Multinomial Naive Bayes had a shorter runtime and a more balanced number of false classifications between the two classes.  
 
-
-#### Contents of Repository
- `code/` : contains all the codes that were written for analysis. The notebooks are numbered in order of use. Data gets saved into the 'data/' folder at the end of each notebook so that it can be imported and used in the next one.  
- 
- `data/` : contains all the raw data that was pulled from reddit using PushShift API and the datasets pulled using PRAW API. The code used to import usinf PRAW is in the `code/` folder.  
 
  
