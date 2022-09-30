@@ -54,8 +54,8 @@ All models tested did really well in classifying posts into the corerct subreddi
 
 Model|Accuracy|Recall|Precision
 -----|--------|------|---------
-SVM-TVec|0.988874|0.990450|0.987084
-MNBayes|0.988537|0.987722|0.989071
+SVM-TVec|0.93|0.95|0.94
+MNBayes|0.85|0.86|0.90
 LogReg-TVec|0.93|0.96|0.94
 LogReg-CVec|0.94|0.95|0.95
 SVM-CVec|0.92|0.95|0.93
@@ -65,7 +65,7 @@ SVM-CVec|0.92|0.95|0.93
 
 #### Conclusion and Future Directions
 
-Overall Support Vector Machine and Multinomial Naive Bayes Classifiers did the best. However Multinomial Naive Bayes had a shorter runtime and a more balanced number of false classifications between the two classes.  
+Overall, Logistic Regression performed the best. 
 
 
  
